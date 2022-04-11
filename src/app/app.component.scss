@@ -17,13 +17,14 @@
   
   .hit-name {
     margin-bottom: 0.5em;
+    font-weight: bold;
   }
   .hit-description {
     color: gray;
     margin-bottom: 0.5em;
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
   }
   
@@ -105,9 +106,8 @@
     margin: 2rem auto;
     text-align: center;
   }
-  
-  .ais-Hits-item img {
-    margin-bottom: 10px;
-    max-width: 100%;
-  }
+
+ ::ng-deep .ais-ToggleRefinement {
+    padding: 0 1em;
+}
   

@@ -17,8 +17,10 @@
         ></ais-numeric-menu>
         <h2>Universes</h2>
         <ais-refinement-list attribute="universes"></ais-refinement-list>
-        <h2>Formateur</h2>
+        <h2>Trainer</h2>
         <ais-refinement-list attribute="main_trainer"></ais-refinement-list>
+        <h2>Trainer agency</h2>
+        <ais-refinement-list attribute="main_trainer_company_name"></ais-refinement-list>
         <h2>Clients</h2>
         <ais-refinement-list attribute="registered_clients"></ais-refinement-list>
         <h2>Location type</h2>
@@ -30,7 +32,7 @@
         <h2>Evaluation</h2>
         <ais-rating-menu attribute="overall_evaluation"></ais-rating-menu>
         <h2>Prix</h2>
-        <ais-range-input attribute="total_price_in_euros"></ais-range-input>
+        <ais-range-input attribute="total_price_in_euros" currency="€"></ais-range-input>
         <h2>Spécifications</h2>
         <ais-toggle
           attribute="exclusive"
@@ -79,7 +81,7 @@
         ></ais-sort-by>
         </div>
 
-        <ais-hits>
+        <ais-infinite-hits>
           <ng-template let-hits="hits">
             <div *ngIf="hits.length === 0">
               No results found matching <strong></strong>.
@@ -138,6 +140,11 @@
                       attribute="main_trainer"
                       [hit]="hit"
                     ></ais-highlight>
+                    (<ais-highlight
+                      attribute="main_trainer_company_name"
+                      [hit]="hit"
+                    ></ais-highlight>)
+                    
                     <span *ngFor="let trainer of hit.additional_trainers; let index = index">,&nbsp;
                       <ais-highlight
                         [attribute]="'additional_trainers.'+ index"
@@ -164,7 +171,7 @@
               </li>
             </ol>
           </ng-template>
-        </ais-hits>
+        </ais-infinite-hits>
 
         <div class="pagination">
           <ais-pagination></ais-pagination>
