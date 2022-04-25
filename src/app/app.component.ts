@@ -28,6 +28,7 @@ export class AppComponent {
   config = {
     indexName: 'sessions',
     searchClient,
+    routing: true,
   }
   dateMenu = [
     { label: 'All' },

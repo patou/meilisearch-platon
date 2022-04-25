@@ -3,7 +3,7 @@
     align-items: center;
     min-height: 50px;
     padding: 0.5rem 1rem;
-    background-image: linear-gradient(to right, #f03774, #f03774);
+    background-image: linear-gradient(to right, #f03774, #ee2238);
     color: #fff;
     margin-bottom: 1rem;
   }
@@ -109,5 +109,12 @@
 
  ::ng-deep .ais-ToggleRefinement {
     padding: 0 1em;
+}
+
+::ng-deep .ais-RefinementList-labelText {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 200px;
 }
   

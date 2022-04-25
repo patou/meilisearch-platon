@@ -7,14 +7,14 @@
   <ais-instantsearch [config]="config">
     <div class="search-panel">
       <div class="search-panel__filters">
-        <ais-current-refinements [excludedAttributes]="['timestamp', 'overall_evaluation', 'certifying', 'exclusive', 'publish_as_new', 'official', 'material_ready']"></ais-current-refinements>
-        <ais-clear-refinements></ais-clear-refinements>
-        <ais-configure [searchParameters]="{ hitsPerPage: 50 }"></ais-configure>
+        <ais-configure [searchParameters]="{ hitsPerPage: 50, maxValuesPerFacet: 500 }"></ais-configure>
         <h2>Date</h2>
         <ais-numeric-menu
           attribute="timestamp"
           [items]="dateMenu"
         ></ais-numeric-menu>
+        <h2>Year</h2>
+        <ais-refinement-list attribute="year" sort-by="name"></ais-refinement-list>
         <h2>Universes</h2>
         <ais-refinement-list attribute="universes"></ais-refinement-list>
         <h2>Trainer</h2>
@@ -79,6 +79,10 @@
             { value: 'sessions:overall_evaluation:desc', label: 'Evaluation desc.' },
           ]"
         ></ais-sort-by>
+        </div>
+        <div class="search-panel__stats">
+          <ais-current-refinements [excludedAttributes]="['timestamp', 'overall_evaluation', 'certifying', 'exclusive', 'publish_as_new', 'official', 'material_ready']"></ais-current-refinements>
+          <ais-clear-refinements></ais-clear-refinements>
         </div>
 
         <ais-infinite-hits>
@@ -164,6 +168,7 @@
                     <div class="hit-price">{{hit.total_price_in_euros | currency:'EUR' }}</div>
                     <div class="hit-rating">{{hit.overall_evaluation}}</div>
                     <div class="hit-type">{{labels[hit.location_type]}}</div>
+                    <div class="hit-students">{{hit.number_of_confirmed_students}} students (+ {{hit.number_of_unconfirmed_students}})</div>
                     <div class="hit-city">{{labels[hit.location_city]}}</div>
                     <div class="hit-type">{{labels[hit.type]}}</div>
                   </div>
