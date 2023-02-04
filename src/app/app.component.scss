@@ -107,7 +107,7 @@
     text-align: center;
   }
 
- ::ng-deep .ais-ToggleRefinement {
+::ng-deep .ais-ToggleRefinement {
     padding: 0 1em;
 }
 
@@ -116,5 +116,9 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     max-width: 200px;
+}
+
+::ng-deep .ais-CurrentRefinements-delete {
+    line-height: inherit;
 }
   
