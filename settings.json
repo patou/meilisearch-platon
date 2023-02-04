@@ -1,0 +1,61 @@
+{
+    "displayedAttributes": [
+        "*"
+    ],
+    "searchableAttributes": [
+        "*"
+    ],
+    "filterableAttributes": [
+        "certifying",
+        "duration_in_days",
+        "exclusive",
+        "language",
+        "location_city",
+        "location_type",
+        "main_trainer",
+        "main_trainer_company_name",
+        "material_ready",
+        "official",
+        "overall_evaluation",
+        "publish_as_new",
+        "registered_clients",
+        "timestamp",
+        "total_price_in_euros",
+        "type",
+        "universes",
+        "year"
+    ],
+    "sortableAttributes": [
+        "main_trainer",
+        "overall_evaluation",
+        "timestamp",
+        "title",
+        "total_price_in_euros"
+    ],
+    "rankingRules": [
+        "words",
+        "typo",
+        "proximity",
+        "attribute",
+        "sort",
+        "exactness"
+    ],
+    "stopWords": [],
+    "synonyms": {},
+    "distinctAttribute": null,
+    "typoTolerance": {
+        "enabled": true,
+        "minWordSizeForTypos": {
+            "oneTypo": 5,
+            "twoTypos": 9
+        },
+        "disableOnWords": [],
+        "disableOnAttributes": []
+    },
+    "faceting": {
+        "maxValuesPerFacet": 100
+    },
+    "pagination": {
+        "maxTotalHits": 1000
+    }
+}
