@@ -21,8 +21,6 @@
         <ais-refinement-list attribute="main_trainer"></ais-refinement-list>
         <h2>Trainer agency</h2>
         <ais-refinement-list attribute="main_trainer_company_name"></ais-refinement-list>
-        <h2>Clients</h2>
-        <ais-refinement-list attribute="registered_clients"></ais-refinement-list>
         <h2>Location type</h2>
         <ais-refinement-list attribute="location_type" [transformItems]="transformItems"></ais-refinement-list>
         <h2>Type</h2>
@@ -154,14 +152,6 @@
                         [attribute]="'additional_trainers.'+ index"
                         [hit]="hit"
                       ></ais-highlight>
-                    </span>
-                  </div>
-                  <div class="hit-description">
-                    <span *ngFor="let client of hit.registered_clients; let index = index; let last = last">
-                      <ais-highlight
-                        [attribute]="'registered_clients.'+ index"
-                        [hit]="hit"
-                      ></ais-highlight>{{!last ? ',&nbsp;':''}}
                     </span>
                   </div>
                   <div class="hit-footer">
